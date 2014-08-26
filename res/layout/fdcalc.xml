@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#12f" >
+
+    <TextView
+        android:id="@+id/header"
+        style="@style/emiheader"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:text="FD Calculator" />
+
+    <TextView
+        android:id="@+id/fdTV"
+        style="@style/emiText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/header"
+        android:layout_marginLeft="@dimen/marginleft"
+        android:layout_marginTop="20dp"
+        android:text="FD Deposit Amount" />
+
+    <EditText
+        android:id="@+id/fdEdit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@id/fdTV"
+        android:layout_alignParentRight="true"
+        android:layout_below="@id/header"
+        android:layout_marginRight="@dimen/marginright"
+        android:layout_marginTop="20dp"
+        android:layout_toRightOf="@id/fdTV"
+        android:background="#fff"
+        android:inputType="numberDecimal" >
+
+        <requestFocus />
+    </EditText>
+
+    <TextView
+        android:id="@+id/roiFdTV"
+        style="@style/emiText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/fdTV"
+        android:layout_marginLeft="@dimen/marginleft"
+        android:layout_marginTop="20dp"
+        android:text="Rate of Interest(per year)" />
+
+    <EditText
+        android:id="@+id/roiFdEdit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@id/roiFdTV"
+        android:layout_alignParentRight="true"
+        android:layout_below="@id/fdEdit"
+        android:layout_marginRight="@dimen/marginright"
+        android:layout_toRightOf="@id/roiFdTV"
+        android:background="#fff"
+        android:inputType="numberDecimal" >
+    </EditText>
+
+    <TextView
+        android:id="@+id/durFdTV"
+        style="@style/emiText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/roiFdTV"
+        android:layout_marginLeft="@dimen/marginleft"
+        android:layout_marginTop="20dp"
+        android:text="Duration in Months" />
+
+    <EditText
+        android:id="@+id/durFdEdit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@id/durFdTV"
+        android:layout_alignParentRight="true"
+        android:layout_below="@id/roiFdEdit"
+        android:layout_marginRight="@dimen/marginright"
+        android:layout_toRightOf="@id/durFdTV"
+        android:background="#fff"
+        android:inputType="number" >
+    </EditText>
+
+    <Button
+        android:id="@+id/Fdcalculate"
+        style="@style/emiText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/durFdTV"
+        android:layout_marginLeft="100dp"
+        android:layout_marginTop="20dp"
+        android:text="Calculate" />
+
+    <Button
+        android:id="@+id/Fdreset"
+        style="@style/emiText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@id/Fdcalculate"
+        android:layout_below="@id/durFdEdit"
+        android:layout_toRightOf="@id/Fdcalculate"
+        android:text="Reset" />
+
+    <TextView
+        android:id="@+id/calValuesFdTv"
+        style="@style/emiText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/Fdcalculate"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:text="Calculated Values" />
+
+
+
+    <TextView
+        android:id="@+id/intFdTv"
+        style="@style/emiText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@id/calValuesFdTv"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="20dp"
+        android:text="Total Interest" />
+
+    <EditText
+        android:id="@+id/intFdEdit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@id/intFdTv"
+        android:layout_alignLeft="@+id/calValuesFdTv"
+        android:layout_alignParentRight="true"
+       android:layout_below="@id/calValuesFdTv"
+        android:layout_marginRight="@dimen/marginright"
+        android:layout_toRightOf="@id/intFdTv"
+        android:background="#fff"
+        android:editable="false"
+        android:inputType="number" >
+    </EditText>
+
+    <TextView
+        android:id="@+id/amtFdTv"
+        style="@style/emiText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@id/intFdTv"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="20dp"
+        android:text="Maturity Amount" />
+
+    <EditText
+        android:id="@+id/amtFdEdit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/amtFdTv"
+        android:layout_alignLeft="@id/resRdEdit"
+        android:layout_alignParentRight="true"
+        android:layout_below="@id/resRdEdit"
+        android:layout_marginRight="@dimen/marginright"
+        android:layout_toRightOf="@id/amtFdTv"
+        android:background="#fff"
+        android:editable="false"
+        android:inputType="number" >
+    </EditText>
+
+</RelativeLayout>

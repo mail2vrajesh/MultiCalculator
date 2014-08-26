@@ -1,0 +1,47 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#000"
+    android:orientation="vertical"
+    tools:context=".MainActivity" >
+
+    <RelativeLayout
+        android:id="@+id/greenBox"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_margin="10dp"
+        android:layout_weight="2"
+        android:background="#fff"
+        android:orientation="horizontal" >
+
+        <Button
+            android:id="@+id/emiBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="100dp"
+            android:text="Emi Calc" />
+
+        <Button
+            android:id="@+id/RdBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/emiBtn"
+            android:layout_below="@+id/emiBtn"
+            android:layout_marginTop="33dp"
+            android:text="RD Calc" />
+
+        <Button
+            android:id="@+id/FdBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/RdBtn"
+            android:layout_below="@+id/RdBtn"
+            android:layout_marginTop="38dp"
+            android:text="FD Calc" />
+
+    </RelativeLayout>
+
+</LinearLayout>
