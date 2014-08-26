@@ -3,81 +3,65 @@ package com.example.calculator;
 import android.os.Bundle;
 import android.preference.EditTextPreference;
 import android.app.Activity;
+import android.app.Fragment;
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
 import android.util.Log;
 import android.view.Menu;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 /**
  * @author Rajesh.Vemula
  * Tasks pending
- * Spinner for FD calc
  * List view for selection
  * landscape & portrait handle
+ * Spinner for FD calc
  * 
  */
-public class MainActivity extends Activity implements OnClickListener {
+public class MainActivity extends Activity implements OnItemClickListener {
 
 	
 	String arr[]={"EmiCalc","FdCalc","RdCalc"};
-	Button b;
+	ArrayAdapter<String> arAdp;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		ArrayAdapter<String> ar=new ArrayAdapter(this,1, arr);
-		
 		setContentView(R.layout.activity_main);
-		b=(Button) findViewById(R.id.emiBtn);
-		b.setOnClickListener(this);
-		((Button)findViewById(R.id.FdBtn)).setOnClickListener(this);
-		((Button)findViewById(R.id.RdBtn)).setOnClickListener(this);
+		arAdp=new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1,arr);
+				
+		ListView lv=(ListView)findViewById(R.id.calcSelector);
+		lv.setAdapter(arAdp);
+		lv.setOnItemClickListener(this);
 	}
 
 
-	
 	@Override
-	public void onClick(View v) {
-		Log.d("raj_tag", "On click in view");
+	public void onItemClick(AdapterView<?> parent, View view, int position,
+			long id) {
 		// TODO Auto-generated method stub
-		if (v.getId() == R.id.emiBtn) {
-			Log.d("raj_tag", "button clicked properly");
-			EmiFragment my=new EmiFragment();
-			FragmentManager fm=getFragmentManager();
-			FragmentTransaction transaction = fm.beginTransaction();
-			transaction.replace(R.id.greenBox,my,"EmiCalc");
-			transaction.addToBackStack("EmiCalc");
-			transaction.commit();
-		
-		}
-		else if (v.getId() == R.id.FdBtn) {
-			Log.d("raj_tag", "button clicked properly");
-			FDFragment my=new FDFragment();
-			FragmentManager fm=getFragmentManager();
-			FragmentTransaction transaction = fm.beginTransaction();
-			transaction.replace(R.id.greenBox,my,"FDCalc");
-			transaction.addToBackStack("FDCalc");
-			transaction.commit();
-		
-		}
+		TextView tv=(TextView) view;
+		Fragment fg;
+		if(((String) tv.getText()).contains("EmiCalc"))
+			fg=new EmiFragment();
+		else if(((String) tv.getText()).contains("Fd"))
+			fg=new FDFragment();
 		else
-		{
-			Log.d("raj_tag", "button clicked properly");
-			RDFragment my=new RDFragment();
-			FragmentManager fm=getFragmentManager();
-			FragmentTransaction transaction = fm.beginTransaction();
-			transaction.replace(R.id.greenBox,my,"RDCalc");
-			transaction.addToBackStack("RDCalc");
-			transaction.commit();
+			fg=new RDFragment();
 		
-		}
-		
+		FragmentManager fm=getFragmentManager();
+		FragmentTransaction transaction = fm.beginTransaction();
+		transaction.replace(R.id.greenBox,fg,(String) tv.getText());
+		transaction.addToBackStack((String) tv.getText());
+		transaction.commit();
 	}
 
 }

@@ -15,32 +15,13 @@
         android:background="#fff"
         android:orientation="horizontal" >
 
-        <Button
-            android:id="@+id/emiBtn"
-            android:layout_width="wrap_content"
+        <ListView
+            android:id="@+id/calcSelector"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_alignParentTop="true"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="100dp"
-            android:text="Emi Calc" />
-
-        <Button
-            android:id="@+id/RdBtn"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignLeft="@+id/emiBtn"
-            android:layout_below="@+id/emiBtn"
-            android:layout_marginTop="33dp"
-            android:text="RD Calc" />
-
-        <Button
-            android:id="@+id/FdBtn"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignLeft="@+id/RdBtn"
-            android:layout_below="@+id/RdBtn"
-            android:layout_marginTop="38dp"
-            android:text="FD Calc" />
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true" >
+        </ListView>
 
     </RelativeLayout>
 
