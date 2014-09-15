@@ -68,11 +68,8 @@ public class BaseFragment extends Fragment implements OnItemClickListener{
 		FragmentTransaction transaction = fm.beginTransaction();
 		
 		if (getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE) {
-			Toast.makeText(getActivity(), "Landscape mode", Toast.LENGTH_SHORT)
-					.show();
-			if(fg==null)
-				transaction.add(R.id.Lilyt1, fg, (String) tv.getText());
-		
+			//Toast.makeText(getActivity(), "Landscape mode", Toast.LENGTH_SHORT).show();
+			transaction.replace(R.id.Lilyt2, fg, (String) tv.getText());
 			transaction.addToBackStack((String) tv.getText());
 			transaction.commit();
 		} else {
