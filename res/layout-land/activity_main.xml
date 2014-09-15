@@ -1,26 +1,30 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/Lilyt1"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#fff"
-    android:orientation="horizontal"
-    android:id="@+id/Lilyt1"
-    >
+    android:orientation="horizontal" >
 
     <fragment
         android:id="@+id/fragment1"
         android:name="com.example.calculator.BaseFragment"
         android:layout_width="100dp"
-        android:layout_height="match_parent" 
+        android:layout_height="match_parent" />
 
-        />
+    <!-- <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+          android:id="@+id/Lilyt2"
+        android:fillViewport="true" > -->
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-         android:background="#0ff"
-        android:id="@+id/Lilyt2"
-         android:layout_weight="2"
-        android:orientation="vertical" >
-    </LinearLayout>
+        <LinearLayout
+            android:id="@+id/Lilyt2"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="2"
+            android:background="#0ff"
+            android:orientation="vertical" >
+        </LinearLayout>
+    <!-- </ScrollView> -->
 
 </LinearLayout>
