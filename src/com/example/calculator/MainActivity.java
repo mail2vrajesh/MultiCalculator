@@ -35,8 +35,16 @@ public class MainActivity extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
+		FragmentManager fm=getFragmentManager();
+		FragmentTransaction transaction = fm.beginTransaction();
+		
+		transaction.add(R.id.Lilyt1,new BaseFragment(),"BaseFrgmnt");
+//		transaction.addToBackStack("Base");
+		transaction.commit();
 		
 	}
+	
+	
 
 
 	

@@ -2,14 +2,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#000"
+    android:background="#fff"
     android:orientation="vertical"
+    android:id="@+id/Lilyt1"
     tools:context=".MainActivity" >
 
-    <fragment
-        android:id="@+id/fragment1"
-        android:name="com.example.calculator.BaseFragment"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
 
 </LinearLayout>
