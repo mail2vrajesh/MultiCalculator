@@ -1,34 +1,32 @@
 package com.example.calculator;
 
 import android.app.Activity;
+import android.app.Fragment;
+import android.app.FragmentManager;
+import android.app.FragmentTransaction;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 
 public class AnotherActivity extends Activity {
-
+	//Fragment emi=null,rd=null,fd=null;
+	//Fragment fg=null;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_another);
+		
+		Intent intent=getIntent();
+		String action=intent.getStringExtra("action");
+		
+			
+		FragmentManager fm=getFragmentManager();
+		FragmentTransaction transaction = fm.beginTransaction();
+		
+		transaction.replace(R.id.RelLyt1,BaseFragment.fg);
+		transaction.commit();
 	}
 
-	@Override
-	public boolean onCreateOptionsMenu(Menu menu) {
-		// Inflate the menu; this adds items to the action bar if it is present.
-		getMenuInflater().inflate(R.menu.another, menu);
-		return true;
-	}
-
-	@Override
-	public boolean onOptionsItemSelected(MenuItem item) {
-		// Handle action bar item clicks here. The action bar will
-		// automatically handle clicks on the Home/Up button, so long
-		// as you specify a parent activity in AndroidManifest.xml.
-		int id = item.getItemId();
-		if (id == R.id.action_settings) {
-			return true;
-		}
-		return super.onOptionsItemSelected(item);
-	}
+	
 }
